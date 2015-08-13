@@ -34,7 +34,7 @@ RUN curl -LO http://download.jetbrains.com/teamcity/TeamCity-$TEAMCITY_VERSION.w
  && rm -f TeamCity-$TEAMCITY_VERSION.war \
  && rm -fR /tmp/*
 
-RUN sed -i 's/serverUrl=http:\/\/localhost:8111\//serverUrl=http:\/\/teamcity:8080\/' /teamcity-agent/conf/buildAgent.properties \
+RUN sed -i 's/serverUrl=http:\/\/localhost:8111\//serverUrl=http:\/\/teamcity:8080\//' /teamcity-agent/conf/buildAgent.properties \
  && sed -i 's/workDir=..\/work/workDir=\/home\/teamcity\/work/'                                  /teamcity-agent/conf/buildAgent.properties
 
 
