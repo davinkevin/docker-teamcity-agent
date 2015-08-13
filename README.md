@@ -5,12 +5,12 @@ You can build your TeamCity Agent with the following command :
 
 ```
 docker build -t davinkevin/docker-teamcity-agent https://github.com/davinkevin/docker-teamcity-agent.git
-docker run --link NAME_OF_YOUR_TEAMCITY_CONTAINER:teamcity --name teamcity-agent davinkevin/docker-teamcity-agent
+docker run -dt --link NAME_OF_YOUR_TEAMCITY_CONTAINER:teamcity --name teamcity-agent davinkevin/docker-teamcity-agent
 ```
 
 For example, with a container named teamcity : 
 ```
-docker run --link teamcity:teamcity --name teamcity-agent davinkevin/docker-teamcity-agent
+docker run -dt --link teamcity:teamcity --name teamcity-agent davinkevin/docker-teamcity-agent
 ```
 
 Mandatory parameters : 
