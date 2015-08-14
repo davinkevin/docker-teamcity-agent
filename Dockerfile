@@ -11,8 +11,9 @@ ENV NODE_VERSION 0.12.7
 RUN (curl -L http://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz | gunzip -c | tar x) \
  && cp -R node-v${NODE_VERSION}-linux-x64/* /usr/ \
  && rm -fR node-v${NODE_VERSION}-linux-x64 \
+ && npm config set registry http://registry.npmjs.org/
  && npm update  -g \
- && npm install -g node-gyp grunt-cli karma-cli gulp
+ && npm install -g node-gyp grunt-cli karma-cli gulp --verbose
 
 # ------------------------------------------------------------------------ maven
 ENV MAVEN_VERSION 3.3.3
